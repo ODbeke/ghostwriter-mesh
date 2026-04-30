@@ -1,0 +1,20 @@
+# Environment variables
+.env
+
+# Node Identities / Private Keys
+keys/*.pem
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
+
+# Go / AXL build artifacts
+axl/node
+
+# IDEs
+.vscode/
+.idea/
