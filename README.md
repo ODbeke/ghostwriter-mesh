@@ -4,13 +4,13 @@ Ghostwriter Mesh Swarm is a decentralized, peer-to-peer AI agent network powered
 
 Instead of relying on centralized messaging buses (like Kafka, RabbitMQ, or Redis queues), this project demonstrates how AI agents can communicate, coordinate, and reach consensus completely over a local peer-to-peer mesh network.
 
-## 🚀 What It Solves
+## What It Solves
 
 In traditional multi-agent systems, agents require a centralized orchestrator or message broker to pass state back and forth. This introduces single points of failure, scaling bottlenecks, and requires complex infrastructure setup.
 
 **Ghostwriter Mesh** circumvents this by giving every AI Agent its own dedicated Yggdrasil IPv6 address and AXL Node. The agents communicate directly with each other by sending raw byte payloads over the mesh to specific public keys. 
 
-## 🧠 The Agent Pipeline
+## The Agent Pipeline
 
 This project simulates an autonomous editorial room with three specialized Gemini-powered agents:
 
