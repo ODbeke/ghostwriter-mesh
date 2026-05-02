@@ -125,8 +125,6 @@ body {
     width: auto;
     animation: floatGhost 4s ease-in-out infinite;
     display: inline-block;
-    mix-blend-mode: multiply;
-    filter: contrast(110%);
 }
 
 @keyframes floatGhost {
