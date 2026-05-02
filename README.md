@@ -4,7 +4,8 @@ Ghostwriter Mesh Swarm is a decentralized, peer-to-peer AI agent network powered
 
 Instead of relying on centralized messaging buses (like Kafka, RabbitMQ, or Redis queues), this project demonstrates how AI agents can communicate, coordinate, and reach consensus completely over a local peer-to-peer mesh network.
 
-<img width="2674" height="1648" alt="image" src="https://github.com/user-attachments/assets/fe6142fc-5afc-4700-bb3f-ded7b1b30718" />
+<img width="2674" height="1648" alt="image" src="https://github.com/user-attachments/assets/32415de4-305d-4cd3-9379-2c099d3ff6cb" />
+
 
 ## What It Solves
 
