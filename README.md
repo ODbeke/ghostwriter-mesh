@@ -12,7 +12,7 @@ In traditional multi-agent systems, agents require a centralized orchestrator or
 
 ## The Agent Pipeline
 
-This project simulates an autonomous editorial room with three specialized Gemini-powered agents:
+This project simulates an autonomous editorial room with three specialized agents:
 
 1. **Writer Agent (`api_writer.py`)**: Hosts the FastAPI frontend bridge. It receives a topic from the user, drafts an initial blog post, and dispatches it over the mesh to the Checker.
 2. **Checker Agent (`agent_checker.py`)**: Polls its AXL node queue. When a draft arrives, it critiques and fact-checks the text, then routes the critique to the Editor.
@@ -84,7 +84,7 @@ python agents/agent_checker.py
 python agents/agent_editor.py
 ```
 
-## 🏃‍♂️ Running the UI & Pipeline
+## Running the UI & Pipeline
 
 Once all 6 terminals are running smoothly, you can interact with the agent swarm via the luxury frontend.
 
