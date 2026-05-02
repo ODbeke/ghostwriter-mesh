@@ -19,12 +19,13 @@ CHECKER_PUB_KEY = os.getenv("CHECKER_PUB_KEY")
 
 class TopicRequest(BaseModel):
     topic: str
+    tone: str = "Professional"
 
 @app.post("/generate")
 def start_agent_workflow(req: TopicRequest):
     try:
-        draft = writer_model.generate_content(f"Write a 3-paragraph draft about: {req.topic}").text
-        draft_section = f"## Writer Draft\n{draft}"
+        draft = writer_model.generate_content(f"Write a 3-paragraph draft about: {req.topic}. The tone must be {req.tone}.").text
+        draft_section = f"TONE: {req.tone}\n\n## Writer Draft\n{draft}"
         
         requests.post("http://127.0.0.1:9002/send", headers={
             "X-Destination-Peer-Id": CHECKER_PUB_KEY

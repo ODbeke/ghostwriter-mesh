@@ -382,3 +382,53 @@ input[type="text"]:focus {
     gap: 0.5rem;
     align-items: center;
 }
+
+/* Tone Selector */
+.tone-selector {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tone-label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tone-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tone-pill {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+}
+
+.tone-pill:hover {
+    background: rgba(108, 92, 231, 0.05);
+    border-color: var(--secondary);
+    color: var(--primary);
+}
+
+.tone-pill.active {
+    background: var(--primary);
+    color: #FFF;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+}

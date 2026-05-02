@@ -5,7 +5,7 @@ import google.generativeai as genai
 load_dotenv()
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-editor_model = genai.GenerativeModel('gemini-flash-latest', system_instruction="You are a senior editor. Polish the fact-checked content into a crisp, authoritative, clean, and readable blog post. Feel free to use headers, sub-headers, and bullet points for readability.")
+editor_model = genai.GenerativeModel('gemini-flash-latest', system_instruction="You are a senior editor. Polish the fact-checked content into a clean and readable blog post. You MUST respect the TONE specified in the input metadata (Professional, Creative, Technical, or Viral).")
 WRITER_PUB_KEY = os.getenv("WRITER_PUB_KEY")
 
 print("Editor Agent started")
@@ -16,7 +16,12 @@ while True:
             draft = resp.content.decode('utf-8')
             if draft:
                 print("Editor received critique, polishing...")
-                final_post = editor_model.generate_content(f"Polish the final fact-checked content from this input:\n{draft}").text
+                # Extract tone if present in metadata
+                tone = "Professional"
+                if "TONE:" in draft:
+                    tone = draft.split("TONE:")[1].split("\n")[0].strip()
+                
+                final_post = editor_model.generate_content(f"Polish this content using a {tone} tone:\n{draft}").text
                 editor_section = f"{draft}\n\n## Editor Action\n{final_post}"
                 print("Editor polish complete, sending to Writer...")
                 res = requests.post("http://127.0.0.1:9004/send", headers={

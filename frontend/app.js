@@ -15,6 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let statusInterval;
+    let selectedTone = 'Professional';
+
+    const tonePills = document.querySelectorAll('.tone-pill');
+    tonePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            tonePills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            selectedTone = pill.getAttribute('data-tone');
+        });
+    });
 
     generateBtn.addEventListener('click', async () => {
         const topic = topicInput.value.trim();
@@ -41,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ topic })
+                body: JSON.stringify({ topic, tone: selectedTone })
             });
 
             if (!response.ok) {

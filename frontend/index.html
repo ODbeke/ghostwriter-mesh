@@ -31,6 +31,15 @@
                 <input type="text" id="topic-input" placeholder="What should we write about today?" autocomplete="off" />
                 <button id="generate-btn" class="primary-btn">Generate</button>
             </div>
+            <div class="tone-selector">
+                <span class="tone-label">Tone:</span>
+                <div class="tone-pills" id="tone-pills">
+                    <button class="tone-pill active" data-tone="Professional">Professional</button>
+                    <button class="tone-pill" data-tone="Creative">Creative</button>
+                    <button class="tone-pill" data-tone="Technical">Technical</button>
+                    <button class="tone-pill" data-tone="Viral">Viral</button>
+                </div>
+            </div>
             <div id="status-indicator" class="status-indicator hidden">
                 <div class="status-dot"></div>
                 <span id="status-text">Writer is drafting...</span>
