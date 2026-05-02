@@ -366,3 +366,9 @@ input[type="text"]:focus {
     color: var(--primary);
     background: rgba(108, 92, 231, 0.1);
 }
+
+.action-btn-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
