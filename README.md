@@ -4,6 +4,8 @@ Ghostwriter Mesh Swarm is a decentralized, peer-to-peer AI agent network powered
 
 Instead of relying on centralized messaging buses (like Kafka, RabbitMQ, or Redis queues), this project demonstrates how AI agents can communicate, coordinate, and reach consensus completely over a local peer-to-peer mesh network.
 
+<img width="2674" height="1648" alt="image" src="https://github.com/user-attachments/assets/fe6142fc-5afc-4700-bb3f-ded7b1b30718" />
+
 ## What It Solves
 
 In traditional multi-agent systems, agents require a centralized orchestrator or message broker to pass state back and forth. This introduces single points of failure, scaling bottlenecks, and requires complex infrastructure setup.
@@ -95,3 +97,23 @@ Once all 6 terminals are running smoothly, you can interact with the agent swarm
 You will see the Writer draft the post, route it over the mesh to the Checker, which forwards it to the Editor. Finally, the beautifully formatted, polished article will render seamlessly on your screen!
 
 *(Note: Initial routing over the Yggdrasil DHT may take ~10-15 seconds per hop, so please be patient while the AI agents securely transmit data across the mesh!)*
+
+___
+
+## Beyond the Hackathon: Real-World Applications
+
+### 1. Web3 & Decentralized Intelligence
+* **Autonomous Trading Reports:** Feed raw tournament data to the mesh to verify risk metrics and generate polished, automated weekly recaps for algorithmic trading fleets.
+* **Smart Contract Auditing Mesh:** Reconfigure the pipeline to `Code Reader → Vulnerability Checker → Exploit Explainer` for rigorous, multi-step security reviews.
+* **Historical Data Consensus:** Independent agents fetch off-chain events, cross-reference findings, and reach consensus on factual truth before pushing data onchain.
+
+### 2. Enterprise Privacy
+* **Secure Corporate Knowledge:** Because AXL uses end-to-end encryption locally, law firms or trading desks can deploy "Researcher" and "Reviewer" agents that query highly confidential, NDA-protected documents without ever sending data to a centralized cloud.
+* **Automated Compliance:** Outbound communications can be auto-routed through a localized Compliance Agent to flag regulatory or internal policy violations before leaving the network.
+
+### 3. High-Fidelity Content Automation
+* **Technical Documentation:** A DevRel pipeline where an agent drafts a tutorial, routes it to a second agent equipped with the raw SDK source code for strict technical verification, and a third polishes it for publication. 
+* **Decentralized News Desks:** Autonomous newsrooms that scrape events, rigorously fact-check against multiple sources, and publish with zero centralized editorial bottlenecks.
+___
+
+Built by [**ODbeke**](https://x.com/lamide_nova) for the Gensyn AXL Hackathon (OpenAgents 2026)
