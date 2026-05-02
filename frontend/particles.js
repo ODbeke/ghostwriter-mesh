@@ -90,9 +90,9 @@ class Bubble {
     reset() {
         this.x = Math.random() * canvas.width;
         this.y = canvas.height + Math.random() * 200;
-        this.size = Math.random() * 15 + 5;
-        this.speedY = Math.random() * 0.8 + 0.3;
-        this.opacity = Math.random() * 0.2 + 0.1;
+        this.size = Math.random() * 18 + 7; // Slightly larger
+        this.speedY = Math.random() * 0.7 + 0.4;
+        this.opacity = Math.random() * 0.25 + 0.15; // More visible
         this.popped = false;
     }
 
@@ -115,17 +115,30 @@ class Bubble {
     }
 
     draw() {
-        ctx.strokeStyle = `rgba(162, 155, 254, ${this.opacity})`;
-        ctx.lineWidth = 1;
+        // Create radial gradient for glossiness
+        const gradient = ctx.createRadialGradient(
+            this.x - this.size * 0.3, this.y - this.size * 0.3, this.size * 0.1,
+            this.x, this.y, this.size
+        );
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${this.opacity + 0.3})`);
+        gradient.addColorStop(0.6, `rgba(162, 155, 254, ${this.opacity})`);
+        gradient.addColorStop(1, `rgba(108, 92, 231, ${this.opacity * 0.5})`);
+
+        ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.stroke();
-        
-        // Soft glow
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity * 0.3})`;
-        ctx.beginPath();
-        ctx.arc(this.x - this.size * 0.3, this.y - this.size * 0.3, this.size * 0.2, 0, Math.PI * 2);
         ctx.fill();
+
+        // Add sharp glint for "shiny" kid appearance
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.4})`;
+        ctx.beginPath();
+        ctx.arc(this.x - this.size * 0.4, this.y - this.size * 0.4, this.size * 0.15, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Thin high-light border
+        ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
     }
 }
 
